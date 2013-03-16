@@ -18,7 +18,7 @@ WCLOSURE_USER = 2
 INACTIVE_USER = 3
 DELETED_USER  = 4
 
-SMTP_TO = "bjorn@swift.is"
+SMTP_TO = "admin+user_daemon@mr.is"
 SMTP_FROM = "admin@mr.is"
 
 # Backends
