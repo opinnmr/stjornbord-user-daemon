@@ -1,2 +1,1 @@
-simplejson
-gdata
+git+https://github.com/opinnmr/stjornbord-google-api.git

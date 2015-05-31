@@ -184,5 +184,5 @@ class IpaMock(object):
         log.info("IpaMock: user_mod: username=%s kwargs=%s", username, kwargs)
 
     def update_password(self, username, password):
-        log.info("IpaMock: update_password: backend_user=%s username=%s password-len=%s",
-            backend_user, username, len(password))
+        log.info("IpaMock: update_password: username=%s password-len=%s",
+            username, len(password))

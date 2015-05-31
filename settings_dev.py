@@ -1,3 +1,5 @@
+import os.path
+
 # Tells backends to use mock APIs
 DEBUG = True
 
@@ -9,13 +11,13 @@ CLEAN_DIRTY = "http://127.0.0.1:8000/clean/user/%s/%s/"
 SYNC_SECRET = "devsecret123"
 
 LOGGING_ROOT = "/tmp/"
-SMTP_HOST    = "ASPMX.L.GOOGLE.COM"
+# sudo python -m smtpd -n -c DebuggingServer localhost:25
+SMTP_HOST    = "localhost"
 
 
 # Google specific settings
-GOOGLE_TMP_DIR  = "/tmp"
-GOOGLE_API_USER = "adminuser@example.com"
-GOOGLE_API_PASS = "secret"
+GOOGLE_TOKEN   = "/tmp/tokens.dat"
+GOOGLE_SECRETS = os.path.join(os.path.dirname(__file__), "client_secrets.json")
 
 # IPA
 IPA_LDAP_PASS = "secret"

@@ -1,13 +1,13 @@
 #!/usr/bin/python
 # coding: utf-8
 
+import json
 import logging
+import os.path
+import sys
+import time
 import urllib
 import urllib2
-import time
-import os.path
-import simplejson
-import sys
 
 import settings
 import backends
@@ -58,9 +58,12 @@ def poll(my_backends):
     # Fetch a list of dirty users
     log.debug("Polling dirty users from %s", settings.DIRTY_USERS)
     fp = urllib2.urlopen(settings.DIRTY_USERS, POST_SYNC_SECRET)
-    dirty = simplejson.load(fp)
+    dirty = json.load(fp)
     fp.close()
 
+    return process(my_backends, dirty)
+
+def process(my_backends, dirty):
     # Iterate through users and process
     processed = 0
     for user in dirty:

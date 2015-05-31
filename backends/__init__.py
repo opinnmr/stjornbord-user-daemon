@@ -77,4 +77,5 @@ class UserBackend(Backend):
             elif user["status"] == settings.DELETED_USER:
                 self.user_del(backend_user)
 
-        log.info("Done processing user %s in backend %s", username, self.__class__.__name__)
+        log.info("Done processing user %s in backend %s (backend user: %s)",
+            username, self.__class__.__name__, backend_user)
